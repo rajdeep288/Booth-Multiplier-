@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Rajdeep Vora
 // 
 // Create Date: 16.07.2025 11:24:29
 // Design Name: 
@@ -10,12 +10,6 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -52,15 +46,17 @@ wire [3:0] A_sub=A_in+(~M+1'b1);
          A_out = { A_in[3], A_in[3:1] };
          Q_out =  { A_in[0],     Q_in[3:0] };
          A_out = A_out+ M;
-         A_out = {A_out[3],A_out[3:1]};
          Q_out = {A_out[0],Q_out[4:1]};
+         A_out = {A_out[3],A_out[3:1]};
+        
          end
  3'b100: begin 
           A_out = { A_in[3], A_in[3:1] };
          Q_out =  { A_in[0],     Q_in[3:0] };
          A_out = A_out- M;
-         A_out = {A_out[3],A_out[3:1]};
          Q_out = {A_out[0],Q_out[4:1]};
+         A_out = {A_out[3],A_out[3:1]};
+         
          end
  3'b101,3'b110:
          begin 
